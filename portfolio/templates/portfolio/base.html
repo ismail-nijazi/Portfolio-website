@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link type="text/css" href="{% static 'portfolio/main.css' %}" rel="stylesheet" />
+  <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+  <title>Ismail Nijazi</title>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#home-page" class="logo">
+      <h3>ISMAIL<h3/>
+    </a>
+    <button class="navButton"><span class="iconify" data-icon="fa:bars"></span></button>
+  </div>
+  <nav class="hiddenNavbar">
+    <ul>
+      <li class="navLinks">
+        <a href="#home-page"><span class="iconify" data-icon="ant-design:home-filled"></span><span class="page-name">Home</span></a>
+      </li>
+      <li class="navLinks">
+        <a href="#about-page"><span class="iconify" data-icon="bx:bxs-user"></span><span class="page-name">About</span></a>
+      </li>
+      <li class="navLinks">
+        <a href="#portfolio-page"><span class="iconify" data-icon="icon-park-outline:handbag"></span ><span class="page-name">Portfolio</span></a>
+      </li>
+      <li class="navLinks">
+        <a href="#contact-page"><span class="iconify" data-icon="feather:mail"></span><span class="page-name">Contact</span></a>
+      </li>
+    </ul>
+  </nav>
+  {% block popupwindow %} {% endblock %}
+  {% if messages %}
+  {% for message in messages %}
+	<div class="message">
+		<h4>{{ message }}</h4>
+  	</div>
+  {% endfor %}
+  {% endif %}
+  <main>
+    <div class="pages">
+		<section id="Home">{% block homePage %}{% endblock %}</section>
+	<section id="About">
+		<div class="page-title">
+			<h3>About <span class="coloredText">Me</span></h3>
+			<p>More about me</p>
+		</div>
+		<article>
+			<div class="my_image">
+				<figure>
+					<img
+						src="{% static 'portfolio/Images/ME/PNG/colorful-smaller.png' %}"
+						alt="Ismail Nijazi"
+					/>
+				</figure>
+			</div>
+			<div class="aboutText">
+				<h3>About me</h3>
+				<p>
+					I am a software engineering student who is really passionate about building or learning new things that
+					are possible with programming. During days I spend most of my time to programming and learning new stuff.
+					I'm also an entry-level full stack developer therefore I would be interested in working within a team or 
+					working on bigger projects to gain more experience.
+				</p>
+				<ul>
+					<li><span>Name:</span>Ismail</li>
+					<li><span>Email:</span>ismail@gmail.com</li>
+					<li><span>Age:</span>21</li>
+					<li><span>Language:</span>Swedish, English, Persian</li>
+				</ul>
+				<div class="skills">
+					<h3>Skills</h3>
+					<ul>
+						<li>Python</li>
+						<li>Javascript</li>
+						<li>Django</li>
+						<li>Django Rest framework</li>
+						<li>React</li>
+						<li>Redux</li>
+						<li>HTML, CSS</li>
+						<li>Sass</li>
+						<li>Git</li>
+						<li>Working with APIs</li>
+					</ul>
+				</div>
+				<a href="#" class="btn">Download CV</a>
+			</div>
+		</article>
+	</section>
+	<section id="Portfolio">
+		{% block projects %}{% endblock %}
+	</section>
+	<section id="ContactPage">
+		{% block contacts %}{% endblock %}
+	</section>
+		</div>
+</main>
+  <script type="text/javascript" src="{% static 'portfolio/script.js' %}"></script>
+</body>
+
+</html>

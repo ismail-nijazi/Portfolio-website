@@ -1,0 +1,120 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block popupwindow %}
+<div id="Modal_Window" class="modal"></div>
+{% endblock popupwindow %} {% block homePage %}
+<figure>
+    <img src="{% static 'portfolio/Images/image-1.png' %}" alt="My Image" />
+</figure>
+<div class="Home-Content">
+    <h3>ISMIAL</h3>
+    <h1>
+        I'm a
+        <span id="text" class="coloredText"
+            >Web Developer
+            <div id="cursor"></div
+        ></span>
+    </h1>
+    <p>I'm a full stack developer who loves to build digital products</p>
+    <a href="#" class="btn">Download CV</a>
+</div>
+<div class="social-medias">
+    <a href="https://www.facebook.com/ismail.afg.39/"
+        ><span class="iconify" data-icon="brandico:facebook"></span
+    ></a>
+    <a href="https://www.instagram.com/sil.ete/"
+        ><span class="iconify" data-icon="akar-icons:instagram-fill"></span
+    ></a>
+    <a href="https://www.linkedin.com/in/ismail-nijazi"
+        ><span class="iconify" data-icon="brandico:linkedin"></span
+    ></a>
+    <a href="https://github.com/ismail-nijazi"
+        ><span class="iconify" data-icon="akar-icons:github-fill"></span
+    ></a>
+</div>
+{% endblock homePage%} {% block projects %}
+<div class="page-title">
+    <h3>My <span class="coloredText">Portfolio</span></h3>
+    <p>Some projects that i did</p>
+</div>
+<ul>
+    {% for project in projects %}
+    <li class="project">
+        <figure>
+            <img src="{{ project.image_1.url }}" alt="Project Image" />
+            <figcaption>
+                <h4>{{ project.name }}</h4>
+                <p>{{ project.type }}</p>
+            </figcaption>
+            <div>
+                <button>
+                    <span
+                        class="iconify"
+                        data-icon="akar-icons:link-chain"
+                    ></span>
+                    <span class="page-name">Preview</span>
+                </button>
+                <button class="projectInfo" data-project-id="{{project.id}}">
+                    <span
+                        class="iconify"
+                        data-icon="fa-solid:info-circle"
+                    ></span>
+                    <span class="page-name">More info</span>
+                </button>
+            </div>
+        </figure>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock projects %} {% block contacts %}
+
+<div class="page-title">
+    <h3>Contact <span class="coloredText">Me</span></h3>
+    <p>Contact me for more info or if you have any questions</p>
+</div>
+<div class="contact">
+    <div class="social-medias">
+        <a href="https://www.facebook.com/ismail.afg.39/"
+            ><span class="iconify" data-icon="brandico:facebook"></span
+        ></a>
+        <a href="https://www.instagram.com/sil.ete/"
+            ><span class="iconify" data-icon="akar-icons:instagram-fill"></span
+        ></a>
+        <a href="https://www.linkedin.com/in/ismail-nijazi"
+            ><span class="iconify" data-icon="brandico:linkedin"></span
+        ></a>
+        <a href="https://github.com/ismail-nijazi"
+            ><span class="iconify" data-icon="akar-icons:github-fill"></span
+        ></a>
+    </div>
+    <form action="/senderEmail/" method="POST">
+        {% csrf_token %}
+        <h4>Message Me</h4>
+        <div class="row">
+            <input
+                type="text"
+                name="senderName"
+                placeholder="Enter your name"
+            />
+            <input
+                type="email"
+                name="senderEmail"
+                placeholder="Enter your email"
+            />
+        </div>
+        <div class="row">
+            <input type="text" name="subject" placeholder="Enter subject" />
+        </div>
+        <div class="row">
+            <textarea
+                name="message"
+                placeholder="Enter your message"
+                cols="20"
+                rows="10"
+            ></textarea>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock contacts %}
