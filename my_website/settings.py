@@ -36,6 +36,13 @@ ALLOWED_HOSTS = [
 ]
 
 
+CORS_ALLOWED_ORIGINS = [
+    'ismailnijazi.herokuapp.com',  
+	'ismailnijazi.com',
+	'www.ismailnijazi.com'
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'my_website.urls'
