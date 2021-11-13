@@ -204,23 +204,25 @@ _INTERVAL_VAL = setInterval(Type, 100);
 projectsInfoButton.forEach((button) => {
     button.addEventListener("click", (e) => {
         const projectID = e.currentTarget.dataset.projectId;
-        fetch(`http://127.0.0.1:8000/project/${projectID}`).then((response) => {
-            response.json().then((data) => {
-                currentProject = data;
-                var options = {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                };
+        fetch(`https://www.ismailnijazi.com/project/${projectID}`).then(
+            (response) => {
+                response.json().then((data) => {
+                    currentProject = data;
+                    var options = {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    };
 
-                let date = new Date(data.date_created);
-                currentProject.date_created = date.toLocaleDateString(
-                    "en-US",
-                    options
-                );
-                updatePopupHTML();
-            });
-        });
+                    let date = new Date(data.date_created);
+                    currentProject.date_created = date.toLocaleDateString(
+                        "en-US",
+                        options
+                    );
+                    updatePopupHTML();
+                });
+            }
+        );
         popUpWindow.style.display = "block";
     });
 });
