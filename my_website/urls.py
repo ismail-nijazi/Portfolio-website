@@ -25,4 +25,7 @@ urlpatterns = [
 	path('', baseView.home, name='HomePage'),
 	path('project/<int:pk>', baseView.getProject, name="projectDetail"),
 	path('senderEmail/', contactView.sendEmail)
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
