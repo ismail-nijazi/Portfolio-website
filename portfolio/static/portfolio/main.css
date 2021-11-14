@@ -1076,7 +1076,6 @@ nav ul .navLinks:hover a {
 }
 
 .modal {
-  display: none;
   position: absolute;
   left: 0;
   top: 0;
@@ -1463,6 +1462,7 @@ body main .pages > section .page-title p {
 .hide {
   display: none;
   visibility: hidden;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 1024px) {

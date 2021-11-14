@@ -132,7 +132,7 @@ const onHashChange = (e) => {
 
 const updateEvents = () => {
     closePopUpWindowButton.addEventListener("click", () => {
-        popUpWindow.style.display = "none";
+        popUpWindow.classList.add('hide');
     });
 };
 
@@ -222,11 +222,11 @@ projectsInfoButton.forEach((button) => {
                         "en-US",
                         options
                     );
+					popUpWindow.classList.remove('hide');
                     updatePopupHTML();
                 });
             }
         );
-        popUpWindow.style.display = "block";
     });
 });
 
