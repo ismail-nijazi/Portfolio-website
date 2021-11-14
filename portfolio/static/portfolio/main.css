@@ -776,7 +776,8 @@ nav ul .navLinks:hover a {
   border-radius: 5px;
 }
 
-#Portfolio ul .project figure div button {
+#Portfolio ul .project figure div button,
+#Portfolio ul .project figure div a {
   margin: 0 5px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -796,28 +797,33 @@ nav ul .navLinks:hover a {
   position: relative;
 }
 
-#Portfolio ul .project figure div button .iconify {
+#Portfolio ul .project figure div button .iconify,
+#Portfolio ul .project figure div a .iconify {
   margin: auto;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-#Portfolio ul .project figure div button:hover {
+#Portfolio ul .project figure div button:hover,
+#Portfolio ul .project figure div a:hover {
   background-color: #610094;
   width: 130px;
 }
 
-#Portfolio ul .project figure div button:hover .page-name {
+#Portfolio ul .project figure div button:hover .page-name,
+#Portfolio ul .project figure div a:hover .page-name {
   -webkit-transform: none;
           transform: none;
   margin-left: 3px;
 }
 
-#Portfolio ul .project figure div button:hover .iconify {
+#Portfolio ul .project figure div button:hover .iconify,
+#Portfolio ul .project figure div a:hover .iconify {
   margin: 0 10px;
 }
 
-#Portfolio ul .project figure div button .page-name {
+#Portfolio ul .project figure div button .page-name,
+#Portfolio ul .project figure div a .page-name {
   position: absolute;
   left: 40px;
   width: 110px;
