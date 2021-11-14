@@ -14,3 +14,7 @@ class Project(models.Model):
 	frontEnd_techniques = models.CharField(max_length=300, blank=True)
 	backEnd_techniques = models.CharField(max_length=300, blank=True)
 	other_techniques = models.CharField(max_length=300, blank=True)
+	def delete(self, using=None, keep_parents=False):
+		self.image_1.delete()
+		self.image_2.delete()
+		super().delete()
