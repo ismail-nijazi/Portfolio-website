@@ -41,7 +41,7 @@ const getIcons = (iconNames, frontEnd = true) => {
 };
 
 const getBackEndIcons = (backend) => {
-    let databases = ["MySQL", "PostgreSQL"];
+    let databases = ["MySQL", "PostgreSQL", "AWS"];
     let techniques = getListOfString(backend);
     if (techniques.length > 0) {
         let result = "<h4>Backend</h4>";
