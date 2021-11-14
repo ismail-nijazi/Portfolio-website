@@ -33,7 +33,7 @@ const getIcons = (iconNames, frontEnd = true) => {
         result += techniques
             .map((tech) => {
                 if (tech.toLowerCase() == "git") {
-                    return `<li><span class="iconify" data-icon="bi:${tech.toLowerCase()}-fill"></span><small>${tech}</small></li>`;
+                    return `<li><span class="iconify" data-icon="bi:${tech.toLowerCase()}"></span><small>${tech}</small></li>`;
                 }
                 return `<li><span class="iconify" data-icon="akar-icons:${tech.toLowerCase()}-fill"></span><small>${tech}</small></li>`;
             })
