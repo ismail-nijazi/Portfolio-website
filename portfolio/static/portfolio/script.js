@@ -132,15 +132,15 @@ const onHashChange = (e) => {
 
 const updateEvents = () => {
     closePopUpWindowButton.addEventListener("click", () => {
-        popUpWindow.classList.add('hide');
+        popUpWindow.classList.add("hide");
     });
 };
 
 // List of sentences
 const content = [
-    "Full stack developer",
-    "Front End Developer",
-    "Backend Developer",
+    "a Full stack web developer",
+    "creating custom websites",
+    "Passionate about coding and learning",
 ];
 
 var _PART = 0;
@@ -222,7 +222,7 @@ projectsInfoButton.forEach((button) => {
                         "en-US",
                         options
                     );
-					popUpWindow.classList.remove('hide');
+                    popUpWindow.classList.remove("hide");
                     updatePopupHTML();
                 });
             }
