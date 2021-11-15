@@ -137,11 +137,7 @@ const updateEvents = () => {
 };
 
 // List of sentences
-const content = [
-    "a Full stack web developer",
-    "creating custom websites",
-    "Passionate about coding and learning",
-];
+const content = ["a Full stack developer", "creating custom websites"];
 
 var _PART = 0;
 
