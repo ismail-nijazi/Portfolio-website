@@ -115,7 +115,10 @@ const onHashChange = (e) => {
         if (key === hash) {
             currentPage = document.querySelector(value);
             currentPage.classList.remove("hide");
-            currentPage.scrollIntoView();
+            //If it is not a mobile device
+            if (window.innerWidth > 500) {
+                currentPage.scrollIntoView();
+            }
         } else {
             document.querySelector(value).classList.add("hide");
         }
