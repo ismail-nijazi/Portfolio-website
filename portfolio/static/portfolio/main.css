@@ -1152,7 +1152,7 @@ nav ul .navLinks:hover a {
 }
 
 .modal .modal-content figure img {
-  display: table;
+  display: inline-table;
   vertical-align: top;
   width: 45%;
   border-radius: 5px;
