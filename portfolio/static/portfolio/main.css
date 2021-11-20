@@ -844,14 +844,6 @@ nav ul .navLinks:hover a {
 
 @media only screen and (max-width: 1024px) {
   #Portfolio ul .project {
-    -ms-flex-preferred-size: 40vw;
-        flex-basis: 40vw;
-    height: 37vw;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #Portfolio ul .project {
     -ms-flex-preferred-size: 80vw;
         flex-basis: 80vw;
     height: 80vw;
