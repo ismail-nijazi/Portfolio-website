@@ -85,6 +85,7 @@
     <form action="/senderEmail/" method="POST">
         {% csrf_token %}
         <h4>Message Me</h4>
+				<input type="text" name="spam" hidden/>
         <div class="row">
             <input
                 type="text"

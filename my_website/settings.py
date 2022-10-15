@@ -31,16 +31,16 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-	'ismailnijazi.herokuapp.com',  
-	'ismailnijazi.com',
-	'www.ismailnijazi.com'
+    'ismailnijazi.herokuapp.com',
+    'ismailnijazi.com',
+    'www.ismailnijazi.com'
 ]
 
 
 CORS_ALLOWED_ORIGINS = [
-    'ismailnijazi.herokuapp.com',  
-	'ismailnijazi.com',
-	'www.ismailnijazi.com'
+    'ismailnijazi.herokuapp.com',
+    'ismailnijazi.com',
+    'www.ismailnijazi.com'
 ]
 
 
@@ -53,10 +53,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'rest_framework',
-	'portfolio.apps.PortfolioConfig',
-	'contact.apps.ContactConfig',
-	'storages'
+    'rest_framework',
+    'portfolio.apps.PortfolioConfig',
+    'contact.apps.ContactConfig',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
 
@@ -164,9 +164,8 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILES_OVERWRITE = False
 AWS_DEFUAULT_ACL = None
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-AWS_S3_REGION_NAME = 'eu-north-1' #change to your region
+AWS_S3_REGION_NAME = 'eu-north-1'  # change to your region
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 
 django_heroku.settings(locals())
-
