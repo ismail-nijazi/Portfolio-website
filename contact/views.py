@@ -10,7 +10,7 @@ from .forms import RecievedEmailForm
 def sendEmail(request):
     if request.method == 'POST':
         form = RecievedEmailForm(request.POST)
-        if(form.is_valid and not request.POST["spam"]):
+        if(form.is_valid and not request.POST["hidden-input"]):
             myEmail = 'ismail.nijazi1@gmail.com'
             subject = request.POST['subject']
             senderEmail = request.POST['senderEmail']
