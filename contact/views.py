@@ -3,26 +3,15 @@ from django.urls import reverse
 from django.core.mail import EmailMultiAlternatives
 from django.contrib import messages
 from .forms import RecievedEmailForm
+from .utils import validate
 
 
 # Create your views here.
-TEXT_TO_BLOCK = ["larnehell", "cryptaxbot"]
-
-
-def validate(form):
-    formFields = [form['subject'].lower(), form['senderEmail'].lower(),
-                  form['senderName'].lower(), form['message'].lower()]
-    if form["hidden-input"]:
-        return False
-    for text in formFields:
-        if text in TEXT_TO_BLOCK:
-            return False
-
 
 def sendEmail(request):
     if request.method == 'POST':
         form = RecievedEmailForm(request.POST)
-        if form.is_valid and validate(request.POST):
+        if form.is_valid() and validate(request.POST):
             myEmail = 'ismail.nijazi1@gmail.com'
             subject = request.POST['subject']
             senderEmail = request.POST['senderEmail']
